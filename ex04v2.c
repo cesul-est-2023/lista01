@@ -1,22 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct produto {
+typedef struct produto {
     char *nome;
     int quantidade;
     float preco;
     float total;
-};
+} Produto;
 
 int main() {
-
-    struct produto listaProdutos[5];
+    Produto listaProdutos[5];
 
     int i;
     float total = 0;
     for (i = 0; i < 5; i++) {
-        struct produto *prod = &listaProdutos[i];
-
+        Produto *prod = &listaProdutos[i];
         prod->nome = malloc(50);
 
         printf("Informe o nome do produto: ");
